@@ -74,3 +74,16 @@ th:first-child, td:first-child {
         flex-direction: column;
     }
 }
+
+.welcome-message {
+    text-align: center;
+    margin-top: 20px; 
+    background-color: red;
+    padding: 20px;
+    border-radius: 60px;
+}
+.welcome-message p {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
