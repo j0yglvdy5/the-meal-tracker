@@ -78,6 +78,9 @@ th:first-child, td:first-child {
 .welcome-message {
     text-align: center;
     margin-top: 20px; 
+    background-color: red;
+    padding: 20px;
+    border-radius: 60px;
 }
 .welcome-message p {
     font-size: 18px;
