@@ -44,4 +44,12 @@ document.addEventListener('DOMContentLoaded', function () {
 function displayMeals(meals) {
 
 }
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        showWelcomeMessage();
+    }, 1000);
+});
 
+function showWelcomeMessage() {
+    const welcomeMessage = document.querySelector('.welcome-message');
+}
