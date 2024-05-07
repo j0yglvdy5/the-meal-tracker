@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Add event listeners to search buttons
     const searchButtons = document.querySelectorAll('.search-button');
     searchButtons.forEach(button => {
         button.addEventListener('click', function () {
@@ -14,12 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 function filterMealsByCategory(category, keyword) {
-    // Get the table and table body for the specified category
     const tableId = `${category}-table`;
     const tableBody = document.querySelector(`#${tableId} tbody`);
-    // Get all rows in the table body
     const rows = tableBody.querySelectorAll('tr');
-    // Loop through each row and hide or show based on the keyword
     rows.forEach(row => {
         const mealName = row.cells[0].textContent.toLowerCase();
         if (mealName.includes(keyword.toLowerCase())) {
@@ -31,25 +27,25 @@ function filterMealsByCategory(category, keyword) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Fetch meal data from the API
     fetchMeals();
 });
  async function fetchMeals() {
-    // Replace 'API_URL' with the URL of the public API
-    await fetch('')
-        .then  (response => response.json())
-        .then(data => {
-            // Check if the API response contains at least 5 objects with 3 attributes each
-            if (Array.isArray(data) && data.length >= 5 && data.every(item => Object.keys(item).length >= 3)) {
-                displayMeals(data);
-            } else {
-                console.error('Invalid API response. Expected at least 5 objects with at least 3 attributes each.');
-            }
-        })
-        .catch(error => console.log(error))
+   try{
+     const response = await fetch("https://fdc.nal.usda.gov/")
+     const data = await response.json();
+      console.log(data);
+    }catch(error){
+        console.error('Error fetching data:', error);
+    }
 }
 function displayMeals(meals) {
-    // Display the fetched meals
-    // Implement as needed
 }
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+        showWelcomeMessage();
+    }, 1000);
+});
 
+function showWelcomeMessage() {
+    const welcomeMessage = document.querySelector('.welcome-message');
+}
