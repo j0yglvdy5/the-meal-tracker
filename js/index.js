@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 }
 function displayMeals(meals) {
+
 }
 document.addEventListener('DOMContentLoaded', function () {
     setTimeout(function () {
