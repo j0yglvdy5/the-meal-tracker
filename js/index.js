@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchMeals();
 });
  async function fetchMeals() {
-   try{
+    try{
      const response = await fetch("https://fdc.nal.usda.gov/")
      const data = await response.json();
       console.log(data);
