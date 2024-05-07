@@ -30,16 +30,13 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchMeals();
 });
  async function fetchMeals() {
-    await fetch('')
-        .then  (response => response.json())
-        .then(data => {
-            if (Array.isArray(data) && data.length >= 5 && data.every(item => Object.keys(item).length >= 3)) {
-                displayMeals(data);
-            } else {
-                console.error('Invalid API response. Expected at least 5 objects with at least 3 attributes each.');
-            }
-        })
-        .catch(error => console.log(error))
+    try{
+     const response = await fetch("https://fdc.nal.usda.gov/")
+     const data = await response.json();
+      console.log(data);
+    }catch(error){
+        console.error('Error fetching data:', error);
+    }
 }
 function displayMeals(meals) {
 
